@@ -14,7 +14,19 @@ class CartItem extends React.Component{
         //alternative use arrow functions it will bind instance of class
     }
     increaseQuantity = () =>{
-        console.log('this.test' , this.state);
+        // this.state.qty += 1;
+        // console.log('this.test' , this.state);
+        // setstate form 1 by objects
+        // this.setState({
+        //     qty: this.state.qty + 1 
+        // })
+        // Set form 2 by passing function
+        //if prev state required use this state
+        this.setState((prevState) => {
+            return{
+                qty : prevState.qty + 1
+            }
+        })
     }
     render(){
         const{price,title,qty} = this.state;
@@ -32,7 +44,7 @@ class CartItem extends React.Component{
                         <img
                             alt="increase" 
                             className="action-icons" 
-                            src="https://cdn-icons.flaticon.com/png/512/3303/premium/3303893.png?token=exp=1648301454~hmac=fa2068d77bef8176a3f368f9d0d35757"
+                            src="https://cdn-icons.flaticon.com/png/512/3303/premium/3303893.png?token=exp=1648362557~hmac=95e733ede12e85975b65e8fdca651201"
                             //this will increase the quantity use event listenier
                             onClick={this.increaseQuantity}
                         />
@@ -44,7 +56,7 @@ class CartItem extends React.Component{
                         <img 
                             alt="delete" 
                             className="action-icons" 
-                            src="https://cdn-icons.flaticon.com/png/512/3405/premium/3405244.png?token=exp=1648301481~hmac=b50cd6ccc8673f0eaf6acb5edc7543e8"
+                            src="https://cdn-icons.flaticon.com/png/512/3303/premium/3303893.png?token=exp=1648362557~hmac=95e733ede12e85975b65e8fdca651201"
                         />
                     </div>
                 </div>

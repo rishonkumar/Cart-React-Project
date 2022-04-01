@@ -12,7 +12,25 @@ class CartItem extends React.Component{
         }
         // this.increaseQuantity = this.increaseQuantity.bind(this);
         //alternative use arrow functions it will bind instance of class
+
+        this.testing();
+
     }
+
+    testing() {
+        const promise = new Promise((resolve,reject)=>{
+            setTimeout(() => {
+                resolve('done')
+            },5000)
+        })  
+        promise.then(()=>{
+            //set state acts like a synchronus call
+            this.setState({qty:this.state.qty+10});
+
+            console.log('state',this.state);
+        })
+    }
+
     increaseQuantity = () =>{
         // this.state.qty += 1;
         // console.log('this.test' , this.state);
